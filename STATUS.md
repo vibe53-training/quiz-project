@@ -1,6 +1,6 @@
 # 개발 현황
 
-## 현재 단계: Phase 4 - GitHub 업로드 (원격 저장소 연결 대기)
+## 현재 단계: Phase 5 - Vercel 배포 (진행 대기)
 
 | Phase | 상태 | 비고 |
 |---|---|---|
@@ -8,8 +8,8 @@
 | 1. AI 연동 | ✅ 완료 | `/api/generate`, JSON 응답 검증 + 1회 재시도 |
 | 2. UI | ✅ 완료 | 입력 폼, 문제 카드, 채점, 정답·해설, 다시 생성/풀기 |
 | 3. 로컬 검증 | ✅ 완료 | 빌드 통과, API·브라우저 테스트 통과 |
-| 4. GitHub | 🔄 진행 중 | `git init` 및 스테이징 완료. Git 사용자 정보 설정 후 첫 커밋, 원격 저장소 연결 필요 |
-| 5. Vercel 배포 | ⏳ 대기 | |
+| 4. GitHub | ✅ 완료 | https://github.com/vibe53-training/quiz-project (`main`) |
+| 5. Vercel 배포 | 🔄 진행 중 | Vercel Import 및 환경변수 등록 필요 |
 
 ## 작업 로그
 
@@ -28,8 +28,8 @@
   - PowerShell 실행 정책으로 `npm` 실행 불가 → `npm.cmd` 사용
   - 폴더명 공백으로 `create-next-app` 대신 수동 구성
   - 문제 생성에 약 15~25초 소요 (5문항 기준)
-  - Git 사용자 정보(user.name/email) 미설정으로 커밋 보류
+  - Git 사용자 정보 미설정 → `git config --global`로 설정 후 첫 커밋(`eef9a6c`)
+  - 에이전트 실행 환경에서는 GitHub 로그인 창을 띄울 수 없어, 사용자 PowerShell 창에서 로그인 후 push 완료
 - 다음 할 일:
-  - `git config` 설정 후 첫 커밋
-  - GitHub 원격 저장소 생성 후 push
-  - Vercel Import 및 환경변수 등록, 배포 확인
+  - Vercel에서 GitHub 저장소 Import
+  - 환경변수(`AI_ENDPOINT`, `AI_API_KEY`, `AI_DEPLOYMENT`) 등록 후 배포 확인
